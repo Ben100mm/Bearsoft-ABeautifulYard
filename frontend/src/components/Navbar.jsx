@@ -19,7 +19,7 @@ function Navbar() {
     <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-primary-100/50 shadow-sm">
       <div className="container-custom">
         <div className="flex justify-between items-center h-24">
-          <Link to="/" className="flex items-center gap-0 -space-x-4 md:-space-x-6">
+          <Link to="/" className="flex items-center gap-0 -space-x-1 md:-space-x-2">
             <img 
               src="/assets/images/Logo.png" 
               alt="A Beautiful Yard Logo" 

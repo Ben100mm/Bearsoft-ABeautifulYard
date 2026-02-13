@@ -103,19 +103,28 @@ function AboutPage() {
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
                 Your Trusted Local Landscaping Partner
               </h2>
-              <div className="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
-                <p>
-                  For over 20 years, A Beautiful Yard Landscaping has been transforming outdoor spaces across Greater Victoria. What started as a lawn maintenance company has grown into a full-service landscaping and gardening team—but we've never lost our personal touch.
-                </p>
-                <p>
-                  Owner Mike Simpson is on-site at every project, ensuring the quality and care your property deserves. We serve Sidney, Saanich Peninsula, Saanich, Oak Bay, Westshore, and Sooke with:
-                </p>
-                <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>Landscape maintenance and lawn care</li>
-                  <li>Garden design and restoration</li>
-                  <li>Property improvements and upgrades</li>
-                  <li>Seasonal cleanups and ongoing care</li>
-                </ul>
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="flex-1 space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
+                  <p>
+                    For over 20 years, A Beautiful Yard Landscaping has been transforming outdoor spaces across Greater Victoria. What started as a lawn maintenance company has grown into a full-service landscaping and gardening team—but we've never lost our personal touch.
+                  </p>
+                  <p>
+                    Owner Mike Simpson is on-site at every project, ensuring the quality and care your property deserves. We serve Sidney, Saanich Peninsula, Saanich, Oak Bay, Westshore, and Sooke with:
+                  </p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Landscape maintenance and lawn care</li>
+                    <li>Garden design and restoration</li>
+                    <li>Property improvements and upgrades</li>
+                    <li>Seasonal cleanups and ongoing care</li>
+                  </ul>
+                </div>
+                <div className="w-full md:w-1/3 flex-shrink-0">
+                  <img 
+                    src="/assets/images/Humming1.png" 
+                    alt="Hummingbird" 
+                    className="w-full h-auto rounded-lg object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>

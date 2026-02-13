@@ -4,11 +4,22 @@ function ContactPage() {
   return (
     <div className="bg-white">
       <section className="section-padding bg-white relative">
-        <div className="container-custom text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Contact Us</h1>
-          <p className="text-xl text-gray-700">
-            We'd love to discuss your landscaping / gardening project!
-          </p>
+        <div className="container-custom relative z-10">
+          <div className="relative">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Contact Us</h1>
+              <p className="text-xl text-gray-700">
+                We'd love to discuss your landscaping / gardening project!
+              </p>
+            </div>
+            <div className="absolute top-2 right-0 hidden md:block">
+              <img 
+                src="/assets/images/Hosackia pinnata.png" 
+                alt="Hosackia pinnata" 
+                className="w-32 h-auto"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
