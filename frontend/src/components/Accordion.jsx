@@ -7,9 +7,17 @@ function Accordion({ title, children, isOpen = false }) {
     <div className="w-full mb-3 bg-white border-b border-primary-200/40 hover:border-primary-300/60 transition-colors duration-300">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full text-left py-5 md:py-6 flex items-center justify-between gap-4 focus:outline-none focus:ring-0 group"
+        className="w-full text-left py-5 md:py-6 flex items-center justify-between gap-4 focus:outline-none group"
         aria-expanded={open}
         aria-controls={`accordion-content-${title}`}
+        onFocus={(e) => {
+          e.currentTarget.style.outline = '3px solid rgba(13, 148, 136, 0.5)';
+          e.currentTarget.style.outlineOffset = '3px';
+        }}
+        onBlur={(e) => {
+          e.currentTarget.style.outline = '';
+          e.currentTarget.style.outlineOffset = '';
+        }}
       >
         <h2 className="text-xl md:text-2xl font-light text-gray-800 flex-1 pr-4 min-w-0 tracking-wide group-hover:text-primary-700 transition-colors duration-300">
           {title}

@@ -9,7 +9,7 @@ function About() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
               About A Beautiful Yard Landscaping
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-700">
               Trusted Landscaping in Greater Victoria BC
             </p>
           </div>
@@ -47,7 +47,7 @@ function About() {
           </div>
 
           <div className="text-center">
-            <Link to="/about" className="btn-primary">
+            <Link to="/about" className="btn-primary" aria-label="Learn more about A Beautiful Yard Landscaping">
               Learn More About Us
             </Link>
           </div>

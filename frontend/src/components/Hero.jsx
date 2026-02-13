@@ -26,10 +26,10 @@ function Hero() {
             Maintenance • Projects • Clean Ups
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact" className="btn-secondary">
+            <Link to="/contact" className="btn-secondary" aria-label="Get in touch with A Beautiful Yard Landscaping">
               Get in Touch
             </Link>
-            <Link to="/services" className="btn-primary">
+            <Link to="/services" className="btn-primary" aria-label="View our landscaping services">
               Our Services
             </Link>
           </div>

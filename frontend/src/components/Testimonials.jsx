@@ -25,7 +25,7 @@ function Testimonials() {
       <div className="container-custom">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">What Our Clients Say</h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-700">
             We're proud to be part of the community here in Greater Victoria
           </p>
         </div>

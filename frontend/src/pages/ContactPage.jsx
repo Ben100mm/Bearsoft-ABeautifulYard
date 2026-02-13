@@ -29,13 +29,13 @@ function ContactPage() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 mb-1">Phone</p>
-                    <a href="tel:2502161183" className="text-primary-600 hover:text-primary-700 transition-colors duration-200">
+                    <a href="tel:2502161183" className="text-primary-600 hover:text-primary-700 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded">
                       (250) 216-1183
                     </a>
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 mb-1">Email</p>
-                    <a href="mailto:info@abylandscaping.com" className="text-primary-600 hover:text-primary-700 transition-colors duration-200 break-all">
+                    <a href="mailto:info@abylandscaping.com" className="text-primary-600 hover:text-primary-700 transition-colors duration-200 break-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded">
                       info@abylandscaping.com
                     </a>
                   </div>
@@ -62,7 +62,7 @@ function ContactPage() {
                       </span>
                     </div>
                   ))}
-                  <p className="text-sm text-gray-600 mt-6 italic">Hours might differ</p>
+                  <p className="text-sm text-gray-700 mt-6 italic">Hours might differ</p>
                 </div>
               </div>
             </div>

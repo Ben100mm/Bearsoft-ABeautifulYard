@@ -108,7 +108,8 @@ function GalleryPage() {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
+                aria-label={`Filter gallery by ${category}`}
+                className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 ${
                   activeCategory === category
                     ? 'bg-primary-600 text-white shadow-lg'
                     : 'bg-white/80 text-gray-700 hover:bg-white hover:text-primary-600 backdrop-blur-sm'
@@ -128,8 +129,17 @@ function GalleryPage() {
             {filteredItems.map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-[1.02] border border-gray-200"
+                className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-[1.02] border border-gray-200 focus-within:ring-2 focus-within:ring-primary-500 focus-within:ring-offset-2"
                 onClick={() => openModal(item)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    openModal(item)
+                  }
+                }}
+                tabIndex={0}
+                role="button"
+                aria-label={`View ${item.title} - ${item.description}`}
               >
                 <div className="aspect-square bg-gradient-to-br from-gray-300 to-gray-500 relative overflow-hidden">
                   {/* Placeholder for image - replace with actual img tag when images are added */}
@@ -146,13 +156,13 @@ function GalleryPage() {
                   <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300" />
                 </div>
                 <div className="p-6">
-                  <span className="text-sm text-gray-600 font-semibold">
+                  <span className="text-sm text-gray-700 font-semibold">
                     {item.category}
                   </span>
                   <h3 className="text-xl font-bold text-gray-900 mt-1">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mt-2">
+                  <p className="text-gray-700 text-sm mt-2">
                     {item.description}
                   </p>
                 </div>
@@ -162,7 +172,7 @@ function GalleryPage() {
 
           {filteredItems.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-gray-600 text-lg">
+              <p className="text-gray-700 text-lg">
                 No projects found in this category.
               </p>
             </div>
@@ -183,8 +193,8 @@ function GalleryPage() {
             <div className="relative">
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 bg-white/90 hover:bg-white text-gray-900 rounded-full p-2 transition-colors duration-200 z-10"
-                aria-label="Close modal"
+                className="absolute top-4 right-4 bg-white/90 hover:bg-white text-gray-900 rounded-full p-2 transition-colors duration-200 z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                aria-label="Close image modal"
               >
                 <svg
                   className="w-6 h-6"
@@ -213,13 +223,13 @@ function GalleryPage() {
               </div>
             </div>
             <div className="p-6">
-              <span className="text-sm text-gray-600 font-semibold">
+              <span className="text-sm text-gray-700 font-semibold">
                 {selectedImage.category}
               </span>
               <h3 className="text-2xl font-bold text-gray-900 mt-2">
                 {selectedImage.title}
               </h3>
-              <p className="text-gray-600 mt-2">{selectedImage.description}</p>
+              <p className="text-gray-700 mt-2">{selectedImage.description}</p>
             </div>
           </div>
         </div>

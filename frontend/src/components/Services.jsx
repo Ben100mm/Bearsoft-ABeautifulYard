@@ -30,7 +30,7 @@ function Services() {
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Our Services</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             A great yard starts with a solid foundation. We specialize in transforming outdoor spaces from messy to masterpiece.
           </p>
         </div>
@@ -47,7 +47,7 @@ function Services() {
         </div>
 
         <div className="text-center">
-          <Link to="/services" className="btn-primary">
+          <Link to="/services" className="btn-primary" aria-label="View all landscaping services">
             View All Services
           </Link>
         </div>

@@ -53,8 +53,8 @@ function ContactForm() {
     }
   }
 
-  const inputBaseClasses = "w-full px-4 py-3 border border-primary-200/60 rounded-lg focus:ring-2 focus:ring-primary-400/50 focus:border-primary-400 bg-white transition-all duration-300 text-gray-900 placeholder:text-gray-400"
-  const selectBaseClasses = "w-full px-4 py-3 border border-primary-200/60 rounded-lg focus:ring-2 focus:ring-primary-400/50 focus:border-primary-400 bg-white transition-all duration-300 text-gray-900"
+  const inputBaseClasses = "w-full px-4 py-3 border border-primary-200/60 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white transition-all duration-300 text-gray-900 placeholder:text-gray-500"
+  const selectBaseClasses = "w-full px-4 py-3 border border-primary-200/60 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white transition-all duration-300 text-gray-900"
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -199,7 +199,8 @@ function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="btn-primary w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+        className="btn-primary w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none"
+        aria-label={isSubmitting ? 'Sending message' : 'Send contact form message'}
       >
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </button>

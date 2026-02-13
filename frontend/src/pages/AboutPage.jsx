@@ -32,9 +32,9 @@ function AboutPage() {
             {/* The ABY Way Section */}
             <div className="space-y-8">
               <div className="space-y-4">
-                <h3 className="text-4xl md:text-5xl font-bold text-gray-900">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
                   The ABY Way: Roots, Results & Reliability
-                </h3>
+                </h2>
               </div>
               <div className="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
                 <p>

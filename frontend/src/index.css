@@ -29,6 +29,12 @@
     transform: translateY(-2px);
   }
   
+  .btn-primary:focus-visible {
+    outline: 3px solid rgba(13, 148, 136, 0.5);
+    outline-offset: 3px;
+    box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 0 3px rgba(13, 148, 136, 0.3);
+  }
+  
   .btn-secondary {
     @apply px-6 py-3 rounded-full font-semibold transition-all duration-300;
     background: rgba(255, 255, 255, 0.8);
@@ -43,6 +49,12 @@
     box-shadow: 0 6px 20px rgba(13, 148, 136, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.6);
     transform: translateY(-2px);
     border-color: rgba(13, 148, 136, 0.5);
+  }
+  
+  .btn-secondary:focus-visible {
+    outline: 3px solid rgba(13, 148, 136, 0.5);
+    outline-offset: 3px;
+    box-shadow: 0 4px 15px rgba(13, 148, 136, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 0 3px rgba(13, 148, 136, 0.3);
   }
   
   .section-padding {
@@ -163,6 +175,23 @@
   
   .rounded-watercolor-sm {
     border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
+  }
+  
+  /* Skip to main content link for keyboard navigation */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: rgb(13, 148, 136);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 0 0 4px 0;
+  }
+  
+  .skip-link:focus {
+    top: 0;
   }
   
   .testimonial-watercolor-card {

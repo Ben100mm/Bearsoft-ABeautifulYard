@@ -38,7 +38,7 @@ function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-medium transition-all duration-300 relative ${
+                className={`font-medium transition-all duration-300 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded ${
                   isActive(link.path)
                     ? 'text-primary-600'
                     : 'text-gray-700 hover:text-primary-600'
@@ -54,9 +54,10 @@ function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700 focus:outline-none"
+            className="md:hidden text-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded p-1"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
             <svg
               className="w-6 h-6"
@@ -84,7 +85,7 @@ function Navbar() {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`block py-2 font-medium transition-colors duration-200 ${
+                className={`block py-2 font-medium transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded ${
                   isActive(link.path)
                     ? 'text-primary-600'
                     : 'text-gray-700 hover:text-primary-600'
