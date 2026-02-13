@@ -5,6 +5,8 @@
 @layer base {
   body {
     @apply text-gray-900 antialiased;
+    background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 50%, #f0fdfa 100%);
+    background-attachment: fixed;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -14,18 +16,381 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors duration-200 shadow-md hover:shadow-lg;
+    @apply px-6 py-3 rounded-full font-semibold text-white transition-all duration-300;
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.9) 0%, rgba(15, 118, 110, 0.9) 100%);
+    box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, rgba(13, 148, 136, 1) 0%, rgba(15, 118, 110, 1) 100%);
+    box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
   }
   
   .btn-secondary {
-    @apply bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold border-2 border-primary-600 hover:bg-primary-50 transition-colors duration-200;
+    @apply px-6 py-3 rounded-full font-semibold transition-all duration-300;
+    background: rgba(255, 255, 255, 0.8);
+    color: rgb(13, 148, 136);
+    box-shadow: 0 4px 15px rgba(13, 148, 136, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(13, 148, 136, 0.3);
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 6px 20px rgba(13, 148, 136, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    border-color: rgba(13, 148, 136, 0.5);
   }
   
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-12 md:py-16;
   }
   
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .watercolor-bg {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .watercolor-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(13, 148, 136, 0.1) 0%, transparent 70%);
+    animation: watercolor-flow 20s ease-in-out infinite;
+    pointer-events: none;
+  }
+  
+  .watercolor-bg::after {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -30%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 60%);
+    animation: watercolor-flow 25s ease-in-out infinite reverse;
+    pointer-events: none;
+  }
+  
+  .watercolor-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(13, 148, 136, 0.1);
+    box-shadow: 0 8px 32px rgba(13, 148, 136, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .watercolor-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(13, 148, 136, 0.05) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .watercolor-card:hover::before {
+    opacity: 1;
+  }
+  
+  .watercolor-gradient {
+    background: linear-gradient(135deg, 
+      rgba(13, 148, 136, 0.9) 0%, 
+      rgba(20, 184, 166, 0.8) 30%,
+      rgba(15, 118, 110, 0.9) 70%,
+      rgba(13, 148, 136, 0.85) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .watercolor-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(13, 148, 136, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  
+  .watercolor-text {
+    background: linear-gradient(135deg, rgb(13, 148, 136) 0%, rgb(20, 184, 166) 50%, rgb(13, 148, 136) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .watercolor-border {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, rgba(13, 148, 136, 0.3), rgba(20, 184, 166, 0.2), rgba(13, 148, 136, 0.3)) border-box;
+  }
+}
+
+@keyframes watercolor-flow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(10%, -10%) scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+@layer utilities {
+  .rounded-watercolor {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  
+  .rounded-watercolor-sm {
+    border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
+  }
+  
+  .testimonial-watercolor-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 
+      0 20px 60px rgba(13, 148, 136, 0.08),
+      0 8px 24px rgba(13, 148, 136, 0.05);
+    overflow: visible;
+    border: none;
+  }
+  
+  .testimonial-watercolor-card::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    right: -30px;
+    bottom: -30px;
+    background: 
+      radial-gradient(
+        ellipse at 25% 20%,
+        rgba(20, 184, 166, 0.15) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 75% 80%,
+        rgba(13, 148, 136, 0.12) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 50% 50%,
+        rgba(20, 184, 166, 0.1) 0%,
+        transparent 60%
+      );
+    filter: blur(50px);
+    opacity: 0.8;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .testimonial-watercolor-card::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: 
+      radial-gradient(
+        circle at 30% 40%,
+        rgba(255, 255, 255, 0.4) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 70% 60%,
+        rgba(255, 255, 255, 0.3) 0%,
+        transparent 40%
+      );
+    filter: blur(40px);
+    opacity: 0.6;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .testimonial-watercolor-card.shape-1 {
+    clip-path: polygon(
+      2% 8%, 12% 2%, 25% 5%, 35% 1%, 48% 4%, 
+      58% 0%, 68% 3%, 78% 1%, 88% 5%, 96% 2%, 
+      98% 12%, 99% 25%, 97% 38%, 99% 48%, 98% 58%, 
+      99% 68%, 97% 78%, 99% 88%, 96% 96%, 88% 98%, 
+      78% 99%, 68% 97%, 58% 99%, 48% 98%, 38% 99%, 
+      28% 97%, 18% 99%, 8% 96%, 2% 88%, 1% 78%, 
+      3% 68%, 1% 58%, 2% 48%, 1% 38%, 3% 28%, 
+      1% 18%
+    );
+  }
+  
+  .testimonial-watercolor-card.shape-2 {
+    clip-path: polygon(
+      5% 3%, 18% 1%, 32% 4%, 45% 2%, 58% 5%, 
+      72% 1%, 85% 4%, 95% 2%, 98% 15%, 97% 28%, 
+      99% 42%, 98% 55%, 99% 68%, 97% 82%, 99% 95%, 
+      92% 98%, 78% 99%, 65% 97%, 52% 99%, 38% 98%, 
+      25% 99%, 12% 97%, 3% 92%, 1% 78%, 2% 65%, 
+      1% 52%, 3% 38%, 1% 25%, 2% 12%
+    );
+  }
+  
+  .testimonial-watercolor-card.shape-3 {
+    clip-path: polygon(
+      1% 12%, 8% 3%, 22% 6%, 35% 2%, 48% 5%, 
+      62% 1%, 75% 4%, 88% 2%, 96% 8%, 99% 22%, 
+      97% 35%, 99% 48%, 98% 62%, 99% 75%, 97% 88%, 
+      92% 96%, 78% 99%, 65% 97%, 52% 99%, 38% 98%, 
+      25% 99%, 12% 97%, 4% 92%, 2% 78%, 1% 65%, 
+      3% 52%, 1% 38%, 2% 25%, 1% 12%
+    );
+  }
+  
+  /* New organic card style for all pages */
+  .organic-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 
+      0 20px 60px rgba(13, 148, 136, 0.08),
+      0 8px 24px rgba(13, 148, 136, 0.05);
+    overflow: visible;
+    border: none;
+  }
+  
+  .organic-card::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    right: -30px;
+    bottom: -30px;
+    background: 
+      radial-gradient(
+        ellipse at 25% 20%,
+        rgba(20, 184, 166, 0.15) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 75% 80%,
+        rgba(13, 148, 136, 0.12) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 50% 50%,
+        rgba(20, 184, 166, 0.1) 0%,
+        transparent 60%
+      );
+    filter: blur(50px);
+    opacity: 0.8;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .organic-card::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: 
+      radial-gradient(
+        circle at 30% 40%,
+        rgba(255, 255, 255, 0.4) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 70% 60%,
+        rgba(255, 255, 255, 0.3) 0%,
+        transparent 40%
+      );
+    filter: blur(40px);
+    opacity: 0.6;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  /* Unique clip-path shapes for organic cards */
+  .organic-card.shape-1 {
+    clip-path: polygon(
+      3% 5%, 15% 2%, 28% 6%, 42% 1%, 55% 4%, 
+      68% 2%, 82% 5%, 94% 3%, 98% 15%, 97% 28%, 
+      99% 42%, 98% 55%, 99% 68%, 97% 82%, 95% 94%, 
+      85% 98%, 72% 99%, 58% 97%, 45% 99%, 32% 98%, 
+      18% 99%, 5% 95%, 2% 82%, 1% 68%, 3% 55%, 
+      1% 42%, 2% 28%, 1% 15%
+    );
+  }
+  
+  .organic-card.shape-2 {
+    clip-path: polygon(
+      1% 8%, 12% 3%, 26% 7%, 38% 2%, 52% 5%, 
+      65% 1%, 78% 4%, 91% 2%, 97% 18%, 99% 32%, 
+      98% 45%, 99% 58%, 97% 72%, 99% 85%, 93% 96%, 
+      80% 99%, 67% 97%, 54% 99%, 41% 98%, 28% 99%, 
+      15% 97%, 4% 91%, 2% 78%, 1% 65%, 3% 52%, 
+      1% 38%, 2% 25%, 1% 12%
+    );
+  }
+  
+  .organic-card.shape-3 {
+    clip-path: polygon(
+      4% 4%, 18% 1%, 32% 5%, 46% 2%, 59% 6%, 
+      73% 1%, 87% 4%, 96% 12%, 99% 26%, 98% 39%, 
+      99% 52%, 97% 65%, 99% 78%, 96% 91%, 84% 98%, 
+      71% 99%, 58% 97%, 44% 99%, 31% 98%, 17% 99%, 
+      6% 94%, 2% 81%, 1% 68%, 3% 55%, 1% 41%, 
+      2% 28%, 1% 15%, 3% 8%
+    );
+  }
+  
+  .organic-card.shape-4 {
+    clip-path: polygon(
+      2% 6%, 14% 3%, 29% 7%, 43% 2%, 57% 5%, 
+      71% 1%, 85% 4%, 95% 10%, 99% 24%, 98% 37%, 
+      99% 51%, 97% 64%, 99% 77%, 94% 90%, 81% 98%, 
+      68% 99%, 55% 97%, 42% 99%, 29% 98%, 16% 99%, 
+      5% 93%, 2% 80%, 1% 67%, 3% 54%, 1% 40%, 
+      2% 27%, 1% 14%, 2% 8%
+    );
+  }
+  
+  .organic-card.shape-5 {
+    clip-path: polygon(
+      5% 3%, 19% 1%, 33% 6%, 47% 2%, 61% 5%, 
+      75% 1%, 89% 4%, 97% 14%, 99% 28%, 98% 41%, 
+      99% 54%, 97% 67%, 99% 80%, 95% 93%, 83% 98%, 
+      70% 99%, 57% 97%, 44% 99%, 31% 98%, 18% 99%, 
+      7% 95%, 2% 82%, 1% 69%, 3% 56%, 1% 43%, 
+      2% 30%, 1% 17%, 3% 10%
+    );
+  }
+  
+  .organic-card.shape-6 {
+    clip-path: polygon(
+      1% 7%, 11% 2%, 25% 6%, 39% 1%, 53% 4%, 
+      67% 2%, 81% 5%, 93% 8%, 98% 22%, 99% 35%, 
+      98% 48%, 99% 61%, 97% 74%, 99% 87%, 92% 96%, 
+      79% 99%, 66% 97%, 53% 99%, 40% 98%, 27% 99%, 
+      14% 97%, 3% 92%, 2% 79%, 1% 66%, 3% 53%, 
+      1% 40%, 2% 27%, 1% 14%, 2% 9%
+    );
   }
 }

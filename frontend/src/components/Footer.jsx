@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container-custom section-padding">
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white watercolor-bg relative">
+      <div className="container-custom section-padding relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4 text-primary-400">A Beautiful Yard</h3>
@@ -26,6 +26,11 @@ function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/gallery" className="text-gray-400 hover:text-primary-400 transition-colors">
+                  Gallery
+                </Link>
+              </li>
+              <li>
                 <Link to="/about" className="text-gray-400 hover:text-primary-400 transition-colors">
                   About
                 </Link>
@@ -42,8 +47,11 @@ function Footer() {
             <h4 className="text-lg font-semibold mb-4">Get in Touch</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="tel:250-216-1183" className="hover:text-primary-400 transition-colors">
-                  250-216-1183
+                5045 Mt Matheson Rd, Sooke, BC V9Z 1C4
+              </li>
+              <li>
+                <a href="tel:2502161183" className="hover:text-primary-400 transition-colors">
+                  (250) 216-1183
                 </a>
               </li>
               <li>

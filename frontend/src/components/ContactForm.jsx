@@ -53,11 +53,14 @@ function ContactForm() {
     }
   }
 
+  const inputBaseClasses = "w-full px-4 py-3 border border-primary-200/60 rounded-lg focus:ring-2 focus:ring-primary-400/50 focus:border-primary-400 bg-white transition-all duration-300 text-gray-900 placeholder:text-gray-400"
+  const selectBaseClasses = "w-full px-4 py-3 border border-primary-200/60 rounded-lg focus:ring-2 focus:ring-primary-400/50 focus:border-primary-400 bg-white transition-all duration-300 text-gray-900"
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
             Name *
           </label>
           <input
@@ -67,12 +70,13 @@ function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            className={inputBaseClasses}
+            placeholder="Your name"
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
             Email address *
           </label>
           <input
@@ -82,14 +86,15 @@ function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            className={inputBaseClasses}
+            placeholder="your.email@example.com"
           />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
             Phone number *
           </label>
           <input
@@ -99,12 +104,13 @@ function ContactForm() {
             required
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            className={inputBaseClasses}
+            placeholder="(250) 123-4567"
           />
         </div>
 
         <div>
-          <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-2">
             Address
           </label>
           <input
@@ -113,13 +119,14 @@ function ContactForm() {
             name="address"
             value={formData.address}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            className={inputBaseClasses}
+            placeholder="Your address"
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="serviceType" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="serviceType" className="block text-sm font-semibold text-gray-700 mb-2">
           How can we help? *
         </label>
         <select
@@ -128,7 +135,7 @@ function ContactForm() {
           required
           value={formData.serviceType}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+          className={selectBaseClasses}
         >
           <option value="">--Please choose an option--</option>
           <option value="Landscape maintenance">Landscape maintenance</option>
@@ -139,7 +146,7 @@ function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="referralSource" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="referralSource" className="block text-sm font-semibold text-gray-700 mb-2">
           How did you find us?
         </label>
         <select
@@ -147,7 +154,7 @@ function ContactForm() {
           name="referralSource"
           value={formData.referralSource}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+          className={selectBaseClasses}
         >
           <option value="">--Please choose an option--</option>
           <option value="Trailer Advertising">Trailer Advertising</option>
@@ -162,7 +169,7 @@ function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
           GREAT! PLEASE SHARE A FEW DETAILS: *
         </label>
         <textarea
@@ -172,7 +179,7 @@ function ContactForm() {
           rows="6"
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+          className={`${inputBaseClasses} resize-none`}
           placeholder="Tell us about your project..."
         ></textarea>
       </div>
@@ -185,7 +192,7 @@ function ContactForm() {
               : 'bg-red-50 text-red-800 border border-red-200'
           }`}
         >
-          {submitStatus.message}
+          <p className="text-sm">{submitStatus.message}</p>
         </div>
       )}
 

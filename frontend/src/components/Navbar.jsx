@@ -10,16 +10,26 @@ function Navbar() {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/services', label: 'Services' },
+    { path: '/gallery', label: 'Gallery' },
     { path: '/about', label: 'About' },
     { path: '/contact', label: 'Contact' },
   ]
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-primary-100/50 shadow-sm">
       <div className="container-custom">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/" className="text-2xl font-bold text-primary-700">
-            A Beautiful Yard
+        <div className="flex justify-between items-center h-24">
+          <Link to="/" className="flex items-center gap-0 -space-x-4 md:-space-x-6">
+            <img 
+              src="/assets/images/Logo.png" 
+              alt="A Beautiful Yard Logo" 
+              className="h-20 w-auto object-contain p-0 m-0"
+            />
+            <img 
+              src="/assets/images/TitleName.png" 
+              alt="A Beautiful Yard" 
+              className="h-80 md:h-[400px] w-auto object-contain p-0 m-0"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -28,13 +38,16 @@ function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-medium transition-colors duration-200 ${
+                className={`font-medium transition-all duration-300 relative ${
                   isActive(link.path)
-                    ? 'text-primary-600 border-b-2 border-primary-600'
+                    ? 'text-primary-600'
                     : 'text-gray-700 hover:text-primary-600'
                 }`}
               >
                 {link.label}
+                {isActive(link.path) && (
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary-400 to-transparent rounded-full"></span>
+                )}
               </Link>
             ))}
           </div>

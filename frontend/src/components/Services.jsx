@@ -6,27 +6,27 @@ function Services() {
     {
       title: 'Landscaping Projects',
       description: 'From garden renovations to full property overhauls, we handle the heavy lifting with professional-grade machinery and expertise.',
-      icon: '🌳',
+      icon: '',
     },
     {
       title: 'Garden Projects',
       description: 'Transform tired outdoor spaces into beautiful, thriving gardens with our hand-picked ornamental plants and premium soil.',
-      icon: '🌺',
+      icon: '',
     },
     {
       title: 'Landscape & Garden Maintenance',
       description: 'Ongoing seasonal maintenance to keep your yard beautiful and healthy year-round.',
-      icon: '🌿',
+      icon: '',
     },
     {
       title: 'Seasonal Maintenance',
       description: 'Comprehensive seasonal care including lawn care, pruning, and garden cleanup services.',
-      icon: '🍂',
+      icon: '',
     },
   ]
 
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding bg-white">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Our Services</h2>

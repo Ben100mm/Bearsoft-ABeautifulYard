@@ -184,15 +184,15 @@ Health check endpoint.
 
 ## Features
 
-- ✅ Responsive design (mobile-first)
-- ✅ SEO-friendly structure
-- ✅ Contact form with validation
-- ✅ Modern green landscaping theme
-- ✅ Modular component architecture
-- ✅ RESTful API
-- ✅ Error handling
-- ✅ CORS configuration
-- ✅ Environment variable support
+- Responsive design (mobile-first)
+- SEO-friendly structure
+- Contact form with validation
+- Modern green landscaping theme
+- Modular component architecture
+- RESTful API
+- Error handling
+- CORS configuration
+- Environment variable support
 
 ## Pages
 
