@@ -77,7 +77,7 @@ function ServicesPage() {
               <Accordion
                 key={index}
                 title={service.title}
-                isOpen={index === 0}
+                isOpen={false}
               >
                 {service.icon && <div className="text-6xl mb-4">{service.icon}</div>}
                 {service.title === 'Landscaping Projects' ? (

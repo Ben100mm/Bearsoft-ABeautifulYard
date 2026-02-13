@@ -6,7 +6,7 @@ function Footer() {
       <div className="container-custom section-padding relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-primary-400">A Beautiful Yard</h3>
+            <h3 className="text-xl font-bold mb-4 text-primary-400">A Beautiful Yard Landscaping</h3>
             <p className="text-gray-400">
               Trusted landscaping and gardening services in Greater Victoria BC.
             </p>
